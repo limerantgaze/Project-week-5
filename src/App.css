@@ -1,0 +1,212 @@
+
+/* Main application */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  color: #121213;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+
+.header {
+  width: 100%;
+  text-align: center;
+  padding: 18px 0;
+  border-bottom: 1px solid #d3d6da;
+}
+
+.header h1 {
+  font-size: 32px;
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: 5px;
+}
+
+.header p {
+  font-size: 13px;
+  color: #787c7e;
+  margin-bottom: 0;
+}
+
+/* Game layout */
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px 12px;
+  gap: 25px;
+}
+
+/* Six-row game board */
+
+.game-board {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* One row */
+
+.row {
+  display: flex;
+  gap: 6px;
+}
+
+/* Individual tiles */
+
+.tile {
+  width: 54px;
+  height: 54px;
+  border: 2px solid #d3d6da;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-sizing: border-box;
+}
+
+/* Tile colors */
+
+.tile.correct,
+.key.correct {
+  background-color: #6aaa64;
+  color: white;
+}
+
+.tile.present,
+.key.present {
+  background-color: #c9b458;
+  color: white;
+}
+
+.tile.absent,
+.key.absent {
+  background-color: #787c7e;
+  color: white;
+}
+
+/* Virtual keyboard */
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.key {
+  min-width: 35px;
+  height: 53px;
+  border: none;
+  border-radius: 4px;
+  background-color: #d3d6da;
+  color: #121213;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  flex: 1;
+  text-transform: uppercase;
+}
+
+.key:hover {
+  opacity: 0.85;
+}
+
+.key.wide-key {
+  min-width: 65px;
+  font-size: 11px;
+}
+
+/* Attempt counter */
+
+.attempt-counter {
+  color: #787c7e;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Game over popup */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.modal {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  width: 100%;
+  max-width: 350px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal h2 {
+  margin-top: 0;
+}
+
+.modal strong {
+  color: #6aaa64;
+  letter-spacing: 2px;
+}
+
+.modal button {
+  background-color: #6aaa64;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.modal button:hover {
+  background-color: #548d4e;
+}
+
+/* Responsive design */
+
+@media (max-width: 400px) {
+  .tile {
+    width: 46px;
+    height: 46px;
+    font-size: 23px;
+  }
+
+  .key {
+    min-width: 0;
+    height: 48px;
+    font-size: 12px;
+  }
+
+  .key.wide-key {
+    min-width: 48px;
+    font-size: 9px;
+  }
+
+  .game-container {
+    padding: 20px 5px;
+  }
+}
